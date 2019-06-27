@@ -7,13 +7,17 @@ html {
     font-size: 100%;
 }
 
+.Heading {
+    /* NOTE: This margin must be the same used for all portfolios */
+    margin-bottom: calc(4px + 1.5vw + 1.5vh);
+}
 
 
 /* ---------------------------------------------------- */
 /* Navbar */
 #top-panel {
-    background-color: ghostwhite;
-    box-shadow:0 0 0px 0.5px black;
+    background-color: none;
+    /* box-shadow:0 0 0px 0.5px black; */
     font-size: 3em;
 }
 
@@ -27,7 +31,7 @@ html {
 /* Navbar Toggle Button */
 #navbar-toggle {
     margin-top: 22px;
-    background-color: ivory;
+    background-color: ghostwhite;
     border-color: black;
 }
 
@@ -65,8 +69,75 @@ html {
 /* ---------------------------------------------------- */
 /* Home */
 
-.Home {
-    margin-top: 500px;
+.flex-home {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
 }
+
+.flex-home img {
+    display: block;
+    margin-bottom: calc(4px + 1.5vw + 1.5vh);
+}
+
+.flex-home img:hover {
+    cursor: pointer;
+}
+
+.column-buffer {
+    width: 11.5%;
+    min-height: 1px;
+}
+
+.column-side {
+    width: 22%;
+}
+
+.column-side img {
+    width: 100%;
+    height: auto;
+}
+
+.column-center {
+    width: 26%;
+    margin-left: calc(4px + 1.5vw + 1.5vh);
+    margin-right: calc(4px + 1.5vw + 1.5vh);
+}
+
+.column-center img {
+    width: 100%;
+    height: auto;
+}
+
+@media screen and (max-width: 800px) {
+  .flex-home {
+      flex-direction: column;
+      justify-content: center;
+  }
+
+  .column-side {
+      width: 92%;
+      margin-left: calc(4px + 1.5vw + 1.5vh);
+      margin-right: calc(4px + 1.5vw + 1.5vh);
+
+  }
+
+  .column-center {
+      width: 92%;
+      margin: 0;
+      margin-left: calc(4px + 1.5vw + 1.5vh);
+      margin-right: calc(4px + 1.5vw + 1.5vh);
+
+  }
+}
+
+/* Modal */
+
+
+#modal-image {
+    width: 100%;
+    height: auto;
+}
+
 
 /* ---------------------------------------------------- */
