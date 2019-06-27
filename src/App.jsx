@@ -1,15 +1,21 @@
 import React, { Component } from 'react';
 
 import Heading from "./Heading";
-import Home from "./Home";
+import Template from "./Template";
 import Portfolio from "./Portfolio";
 import Workflow from "./Workflow";
 import About from "./About";
 import Contact from "./Contact";
 
+import photos from "./photos";
+
+
 /*
 Specs:
 Navbar at top
+
+HEADING - used to modify banner image
+TEMPLATE - used to display myriad of photos
 
 Options to be selected:
 
@@ -90,7 +96,7 @@ class App extends Component {
         return <Contact/>;
       case "Home":
       default:
-        return <Home/>;
+        return <Template photos={photos.Home}/>;
     }
   }
 

@@ -1,11 +1,17 @@
 import React, { Component } from 'react';
 
-// TODO: Create option to see my modelling page
-
 class Portfolio extends Component {
   render() {
     return (
-      <p>Portfolio</p>
+      <div className="Portfolio">
+        <div>
+          <a>UCLA Class of 2019</a>
+        </div>
+        <div>
+          <a>Ivan Model</a>
+        </div>
+
+      </div>
     );
   }
 }
