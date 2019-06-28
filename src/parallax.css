@@ -1,12 +1,19 @@
 /* ---------------------------------------------------- */
 /* Home */
 
-#Home-banner {
-    background-image: url("/images/banner/Home.jpg");
+.Banner {
     width: 100%;
     height: calc(4px + 15vh + 15vw);
     background-attachment: fixed;
-    background-position: center;
+    background-position: bottom;
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+#Home-banner {
+    background-image: url("/images/banner/Home.jpg");
+}
+
+#Workflow-banner {
+    background-image: url("/images/banner/Workflow.jpg");
 }

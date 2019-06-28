@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class Contact extends Component {
   render() {
     return (
-      <p>Contact</p>
+      <p>Coming to a retail store near you!</p>
     );
   }
 }

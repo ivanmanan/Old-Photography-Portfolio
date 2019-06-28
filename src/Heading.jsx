@@ -1,19 +1,65 @@
 import React, { Component } from "react";
+import {Dropdown} from 'react-bootstrap';
 
 import "./parallax.css";
 
 class Heading extends Component {
 
   renderOptions() {
-    return this.props.options.map((option, key) => (
-      <div className="options" key={key}>
-        <button onClick={() => this.props.handleOptions(option)}>
-          <li>
-            {option}
-          </li>
-        </button>
+
+    // TODO: Make drop-down under Portfolio section with same
+    // onClick function
+    // Portfolio dropdown menu will be list with separate function
+    // array will be located in this file
+    // TODO: About dropdown will require "contact" options
+    // NOTE: About section will also icnlude contact at bottom
+
+    return (
+      <div className="all-options">
+
+        <div className="options">
+          <button onClick={() => this.props.handleOptions("Home")}>
+            <li>
+              Home
+            </li>
+          </button>
+        </div>
+
+        <div className="options">
+          <button onClick={() => this.props.handleOptions("Portfolio")}>
+            <li>
+              Portfolio
+            </li>
+          </button>
+
+        </div>
+
+        <div className="options">
+          <button onClick={() => this.props.handleOptions("Workflow")}>
+            <li>
+              Workflow
+            </li>
+          </button>
+        </div>
+
+        <div className="options">
+          <button onClick={() => this.props.handleOptions("Contact")}>
+            <li>
+              Contact
+            </li>
+          </button>
+        </div>
+
       </div>
-    ));
+    );
+  }
+
+  displayBanner() {
+    if(this.props.currentOption !== "Contact")
+    return (
+      <div className="Banner"
+           id={this.props.currentOption+"-banner"}/>
+    );
   }
 
   // TODO: Need to fix navbar scaling when becoming buttons
@@ -57,10 +103,7 @@ class Heading extends Component {
           </div>
 
         </nav>
-
-        <div className="Banner"
-             id={this.props.currentOption+"-banner"}/>
-
+        {this.displayBanner()}
       </div>
     );
   }

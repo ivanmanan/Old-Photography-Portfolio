@@ -2,22 +2,13 @@ import React, { Component } from 'react';
 import Modal from 'react-modal';
 
 /*
-   TODO: Modal must adjust according to orientation
    TODO: In the future, include square orientation "s" in photos.js
-
-   NOTE:
-   I must make this automated such that for all the images in the
-   array, I divide it into 3 and each group of images goes into a
-   specific columns
-
-   The automation is creating the new div tag every time per image
+   TODO: Resolve orientation - see issue in photos.js file
  */
 
 Modal.setAppElement("#root");
 
-// TODO: Need to adjust width and height of images to scale
-//       nicely for both vertical and horizontal images
-const customStyles = {
+const verticalStyle = {
   content : {
     top: '50%',
     left: '50%',
@@ -30,24 +21,37 @@ const customStyles = {
   }
 };
 
-
+const horizontalStyle = {
+  content : {
+    top: '50%',
+    left: '50%',
+    right: 'auto',
+    bottom: 'auto',
+    transform: 'translate(-50%, -50%)',
+    padding: 0,
+    maxHeight: '100%',
+    maxWidth: '100%'
+  }
+};
 
 class Template extends Component {
   constructor(props) {
     super(props);
     this.state = {
       showModal: false,
-      modalImage: ""
+      modalImage: "",
+      orientation: "v"
     };
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
     this.renderColumn = this.renderColumn.bind(this);
+    this.renderModal = this.renderModal.bind(this);
   }
 
-  openModal(modalImage) {
-    console.log(modalImage);
+  openModal(modalImage, orientation) {
     this.setState({
       modalImage: modalImage,
+      orientation: orientation,
       showModal: true
     });
   }
@@ -56,23 +60,33 @@ class Template extends Component {
     this.setState({showModal: false});
   }
 
+  renderModal() {
+    switch(this.state.orientation) {
 
-  /*
-     TODO: Split this.props.photos into 3, then create functions for
-     to map each div tags for each column
-   */
+      case "h":
+        return (
+            <Modal isOpen={this.state.showModal}
+                   onRequestClose={this.closeModal}
+                   style={horizontalStyle}>
+              <img id="modal-image" src={this.state.modalImage}/>
+            </Modal>
+        );
+      case "v":
+        return (
+            <Modal isOpen={this.state.showModal}
+                   onRequestClose={this.closeModal}
+                   style={verticalStyle}>
+              <img id="modal-image" src={this.state.modalImage}/>
+            </Modal>
+        );
+    }
+  }
 
   renderColumn(start, end, photos_names) {
-
-    // TODO: Must create conditional for orientation of photo
-    // so modal knows how big to display the image
-
     const photos_list = photos_names.slice(start, end);
-    console.log(photos_list);
-
     return photos_list.map((photo, key) => (
       <img src={photo} alt="" onClick={() =>
-        this.openModal(photo)} key={key}/>
+        this.openModal(photo, this.props.photos[photo])} key={key}/>
     ));
   }
 
@@ -105,7 +119,7 @@ class Template extends Component {
 
     return (
       <div className="Template">
-        <div className="flex-home">
+        <div className="flex-template">
 
           <div className="column-buffer">
           </div>
@@ -124,11 +138,7 @@ class Template extends Component {
 
         </div>
 
-        <Modal isOpen={this.state.showModal} style={customStyles}
-               onRequestClose={this.closeModal}>
-          <img id="modal-image" src={this.state.modalImage}/>
-        </Modal>
-
+        {this.renderModal()}
       </div>
     );
   }
