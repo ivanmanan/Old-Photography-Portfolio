@@ -55,11 +55,14 @@ class Heading extends Component {
   }
 
   displayBanner() {
-    if(this.props.currentOption !== "Contact")
-    return (
-      <div className="Banner"
-           id={this.props.currentOption+"-banner"}/>
-    );
+    if(this.props.currentOption === "Home" ||
+       this.props.currentOption === "Workflow" ||
+       this.props.currentOption === "Portfolio") {
+      return (
+        <div className="Banner"
+             id={this.props.currentOption+"-banner"}/>
+      );
+    }
   }
 
   // TODO: Need to fix navbar scaling when becoming buttons

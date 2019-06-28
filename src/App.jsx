@@ -9,27 +9,22 @@ import Footer from "./Footer";
 
 import photos from "./photos";
 
-
-/*
-Specs:
-Navbar at top
-
-HEADING - used to modify banner image
-TEMPLATE - used to display myriad of photos
-
-Options to be selected:
-
-NOTE: When photo is selected, it gets displayed in a modal in wide
-      screen with x-button at top-right corner
-
-Portfolio - has dropdown of options; when click Portfolio, it displays list of options to choose from
---> be it landscape, weddings, events, portraits/people
---> all of these would be sample photos
-
- */
-
 // Default option
 let optionSelected = "Home";
+
+class Pair {
+  constructor(name, title) {
+    this.name = name;
+    this.title = title;
+  }
+}
+
+// NOTE: Must create new pair for every shoot and update the
+//       collection array. Collection is used for the menu in
+//       Portfolio.jsx and for the dropdown in Heading.jsx
+const p1 = new Pair("Class2019", "UCLA Class of 2019");
+const p2 = new Pair("Ivan", "Ivan's Modelling Career")
+const collection = [p1, p2];
 
 class App extends Component {
   constructor(props) {
@@ -41,7 +36,6 @@ class App extends Component {
   }
 
   componentWillMount() {
-
     // If page refreshes, option will be chosen from last left off
     optionSelected = sessionStorage.getItem('optionSelected') || "Home";
     this.setState({
@@ -58,28 +52,29 @@ class App extends Component {
 
   renderSelection() {
     switch(this.state.optionSelected) {
-      // TODO: Portfolio itself has many options to display
-      //       I'm going to use same ReactJS class, just different
-      //       photos from the array of photo file names
       case "Portfolio":
-        return <Portfolio/>;
+        return <Portfolio handleOptions={this.handleOptions}
+                          collection={collection}/>;
       case "Workflow":
         return <Workflow/>;
       case "Contact":
         return <Contact/>;
+      case "Class2019":
+        return <Template photos={photos.Class2019}/>;
+      case "Ivan":
+        return <Template photos={photos.Ivan}/>;
       case "Home":
       default:
         return <Template photos={photos.Home}/>;
     }
   }
 
-
   render() {
     return (
       <div className="App">
         <Heading handleOptions={this.handleOptions}
-                 currentOption={this.state.optionSelected}/>
-
+                 currentOption={this.state.optionSelected}
+                 collection={collection}/>
         {this.renderSelection()}
         <Footer/>
       </div>

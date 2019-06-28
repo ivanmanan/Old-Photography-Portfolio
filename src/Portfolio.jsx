@@ -1,16 +1,28 @@
 import React, { Component } from 'react';
+const target = "#";
 
 class Portfolio extends Component {
+
+  renderCollection(collection) {
+    console.log(collection);
+
+    return collection.map((event, key) => (
+        <div className="flex-portfolio-content" key={key}>
+          <a href={target} onClick={() => this.props.handleOptions(event.name)}>
+            ~ {event.title} ~
+          </a>
+        </div>
+    ));
+  }
+
   render() {
     return (
       <div className="Portfolio">
-        <div>
-          <a>UCLA Class of 2019</a>
+        <div className="flex-portfolio">
+          <div className="column-center-portfolio">
+            {this.renderCollection(this.props.collection)}
+          </div>
         </div>
-        <div>
-          <a>Ivan Model</a>
-        </div>
-
       </div>
     );
   }

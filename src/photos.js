@@ -14,6 +14,7 @@ function createFileObject(folder_name, numberOfFiles) {
     // NOTE: Image must be loaded first
     // This method is too slow --- this must be done in Template.jsx
     // As a result, must move hash table into Template.jsx
+    // TODO: Convert hash table to using array of pair objects instead
     // KEY: file name, VALUE: orientation of photo
     photo_object[file_name] = "v";
 
@@ -37,12 +38,19 @@ function createFileObject(folder_name, numberOfFiles) {
   return photo_object;
 }
 
-// NOTE: Declare new photo folders here
-// NOTE: file names must start 0, such as file0.jpg, file1.jpg, ...
+/* NOTE: Declare new photo folders here
+ *       File names must start 0, such as file0.jpg, file1.jpg, ...
+ *       Must edit collection array in App.jsx
+ *       Must edit renderSelection() function in App.jsx
+ */
 const Home = createFileObject("home", 6);
+const Class2019 = createFileObject("class", 10);
+const Ivan = createFileObject("ivan", 10)
 
 const photos = {
   Home: Home,
+  Class2019: Class2019,
+  Ivan: Ivan
 }
 
 module.exports = photos;

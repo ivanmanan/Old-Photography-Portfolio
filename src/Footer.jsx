@@ -1,16 +1,18 @@
 import React, { Component } from 'react';
 
-/*
-   specs:
-   Instagram link here
-
- */
-
 class Footer extends Component {
   render() {
     return (
       <div className="Footer">
-        <p>Footer</p>
+        <div className="flex-footer">
+          <div className="column-buffer-footer"/>
+          <div className="column-center-footer">
+            <a href="https://www.instagram.com/ivanmphotos/">
+              Instagram
+            </a>
+          </div>
+
+        </div>
       </div>
     );
   }

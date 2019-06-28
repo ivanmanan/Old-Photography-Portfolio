@@ -9,9 +9,8 @@ html {
 
 .Heading {
     /* NOTE: This margin must be the same used for all portfolios */
-    margin-bottom: calc(4px + 1.5vw + 1.5vh);
+    margin-bottom: calc(4px + 2vw + 2vh);
 }
-
 
 /* ---------------------------------------------------- */
 /* Navbar */
@@ -85,7 +84,7 @@ html {
 
 .flex-template img {
     display: block;
-    margin-bottom: calc(4px + 1.5vw + 1.5vh);
+    margin-bottom: calc(4px + 2vw + 2vh);
 }
 
 .flex-template img:hover {
@@ -108,8 +107,8 @@ html {
 
 .column-center {
     width: 26%;
-    margin-left: calc(4px + 1.5vw + 1.5vh);
-    margin-right: calc(4px + 1.5vw + 1.5vh);
+    margin-left: calc(4px + 2vw + 2vh);
+    margin-right: calc(4px + 2vw + 2vh);
 }
 
 .column-center img {
@@ -146,10 +145,45 @@ html {
 }
 
 /* ---------------------------------------------------- */
+/* Portfolio */
+
+.Portfolio {
+    font-size: calc(1em + 1.6vw + 1.6vh);
+}
+
+.flex-portfolio {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: center;
+    padding-bottom: calc(4px + 2vw + 2vh);
+}
+
+.flex-portfolio-content {
+    text-align: center;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+}
+
+.flex-portfolio-content a {
+    text-decoration: none;
+    color: navy;
+}
+
+.flex-portfolio-content a:hover {
+    cursor: pointer;
+    color: green;
+}
+
+column-center-portfolio {
+    width: 40%;
+}
+
+/* ---------------------------------------------------- */
 /* Workflow */
 
 .Workflow {
-    font-size: calc(0.5em + 0.8vw + 0.8vh);
+    font-size: calc(0.1em + 2vw + 0.3vh);
 }
 
 .flex-workflow-top {
@@ -159,19 +193,112 @@ html {
 }
 
 .column-buffer-workflow-top {
-    width: 20%;
+    width: 12%;
     min-height: 1px;
 }
 
 .column-center-workflow-top {
-    width: 78%;
+    width: 74%;
+}
+
+.column-center-workflow-top p {
+    padding-bottom: calc(0.5em + 0.8vw + 0.8vh);
+}
+
+/* Two columns - one for image, other for text */
+.flex-workflow-row {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    padding-top: calc(0.9em + 0.8vw + 0.8vh);
+    padding-bottom: calc(0.9em + 0.8vw + 0.8vh);
+    background-image: linear-gradient(white, mintcream);
+}
+
+.column-buffer-workflow {
+    width: 12%;
+    min-height: 1px;
+}
+
+.column-workflow-content {
+    width: 36%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.column-buffer-center {
+    width: 3%;
+}
+
+.Workflow img {
+    width: 95%;
+    height: auto;
+}
+
+.flex-workflow-bottom {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    background-color: mintcream;
+}
+
+/* ---------------------------------------------------- */
+/* Contact */
+
+.Contact {
+    font-size: calc(0.5em + 0.8vw + 0.8vh);
+}
+
+.Contact hr {
+    border: 1.5px solid black;
+}
+
+.flex-contact {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    padding-top: calc(1em + 1.5vw + 1.5vh);
+    padding-bottom: calc(1em + 1vw + 1vh);
+}
+
+.flex-contact img {
+    width: 60%;
+    height: auto;
 }
 
 /* ---------------------------------------------------- */
 /* Footer */
 
 .Footer {
+    background-color: aliceblue;
+    box-shadow: 0.5px 0.5px 0.5px 0.5px black;
+    height: 100%;
+}
+
+.flex-footer {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
     padding-top: calc(0.5em + 3vw + 3vh);
     padding-bottom: calc(0.5em + 3vw + 3vh);
-    background-color: grey;
+}
+
+.column-buffer-footer {
+    width: 11.5%;
+    min-height: 1px;
+}
+
+.column-center-footer {
+    width: 75%;
+}
+
+.column-center-footer a {
+    color: black;
+    font-size: calc(0.5em + 2vw);
+    text-decoration: none;
+}
+
+.column-center-footer a:hover {
+    color: green;
 }

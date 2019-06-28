@@ -3,7 +3,8 @@ import Modal from 'react-modal';
 
 /*
    TODO: In the future, include square orientation "s" in photos.js
-   TODO: Resolve orientation - see issue in photos.js file
+   TODO: Resolve orientation - see issue in photos.js file - ideally,
+         need to move image.onload function onto this file
  */
 
 Modal.setAppElement("#root");
@@ -68,15 +69,16 @@ class Template extends Component {
             <Modal isOpen={this.state.showModal}
                    onRequestClose={this.closeModal}
                    style={horizontalStyle}>
-              <img id="modal-image" src={this.state.modalImage}/>
+              <img id="modal-image" src={this.state.modalImage} alt=""/>
             </Modal>
         );
+      default:
       case "v":
         return (
             <Modal isOpen={this.state.showModal}
                    onRequestClose={this.closeModal}
                    style={verticalStyle}>
-              <img id="modal-image" src={this.state.modalImage}/>
+              <img id="modal-image" src={this.state.modalImage} alt=""/>
             </Modal>
         );
     }
@@ -110,6 +112,8 @@ class Template extends Component {
       case 2:
         col_one++;
         col_two++;
+        break;
+      default:
         break;
     }
 
