@@ -34,7 +34,7 @@ function createFileObject(folder_name, numberOfFiles) {
 
      * console.log(img);*/
   }
-  console.log(photo_object);
+  /* console.log(photo_object);*/
   return photo_object;
 }
 

@@ -1,52 +1,55 @@
 import React, { Component } from "react";
-import {Dropdown} from 'react-bootstrap';
 
 import "./parallax.css";
+import "./navbar.css"
 
 class Heading extends Component {
+  constructor() {
+    super();
+    this.renderPortfolio = this.renderPortfolio.bind(this);
+  }
+
+  renderPortfolio() {
+    return this.props.collection.map((pair, key) => (
+      <button key={key}
+              onClick={() => this.props.handleOptions(pair.name)}>
+        {pair.title}
+      </button>
+    ));
+  }
 
   renderOptions() {
-
-    // TODO: Make drop-down under Portfolio section with same
-    // onClick function
-    // Portfolio dropdown menu will be list with separate function
-    // array will be located in this file
-    // TODO: About dropdown will require "contact" options
-    // NOTE: About section will also icnlude contact at bottom
-
     return (
       <div className="all-options">
 
         <div className="options">
           <button onClick={() => this.props.handleOptions("Home")}>
-            <li>
               Home
-            </li>
           </button>
         </div>
 
         <div className="options">
-          <button onClick={() => this.props.handleOptions("Portfolio")}>
-            <li>
-              Portfolio
-            </li>
-          </button>
-
+          <div className="dropdown">
+            <button onClick={() => this.props.handleOptions("Portfolio")}>
+              <p>
+                Portfolio
+              </p>
+            </button>
+            <div className="dropdown-content" >
+              {this.renderPortfolio()}
+            </div>
+          </div>
         </div>
 
         <div className="options">
           <button onClick={() => this.props.handleOptions("Workflow")}>
-            <li>
-              Workflow
-            </li>
+            Workflow
           </button>
         </div>
 
         <div className="options">
           <button onClick={() => this.props.handleOptions("Contact")}>
-            <li>
-              Contact
-            </li>
+            Contact
           </button>
         </div>
 
@@ -66,10 +69,6 @@ class Heading extends Component {
   }
 
   // TODO: Need to fix navbar scaling when becoming buttons
-  // TODO: Need to vertically align in center navbar text
-  // TODO: For banner image, create parallax effect, like how
-  //       i-j-photo.com/portfolio does it
-
 
   render() {
     return (
@@ -79,8 +78,7 @@ class Heading extends Component {
           <div className="container-fluid">
 
             <div className="navbar-right">
-              <button type="button" className="pull-right
-                navbar-toggle"
+              <button type="button" className="pull-right navbar-toggle"
                       data-toggle="collapse"
                       data-target="#header-links"
                       id="navbar-toggle">
@@ -106,6 +104,7 @@ class Heading extends Component {
           </div>
 
         </nav>
+
         {this.displayBanner()}
       </div>
     );

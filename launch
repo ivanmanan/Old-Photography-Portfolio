@@ -1,0 +1,4 @@
+#!/bin/bash
+
+npm run build
+surge ./build/ ivanmphotos.surge.sh

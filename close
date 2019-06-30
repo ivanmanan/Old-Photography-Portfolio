@@ -1,0 +1,4 @@
+#!/bin/bash
+
+# Used to disable server on domain
+surge teardown ivanmphotos.surge.sh

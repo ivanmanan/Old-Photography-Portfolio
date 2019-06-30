@@ -4,8 +4,6 @@ const target = "#";
 class Portfolio extends Component {
 
   renderCollection(collection) {
-    console.log(collection);
-
     return collection.map((event, key) => (
         <div className="flex-portfolio-content" key={key}>
           <a href={target} onClick={() => this.props.handleOptions(event.name)}>
