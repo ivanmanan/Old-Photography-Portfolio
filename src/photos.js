@@ -45,8 +45,15 @@ function createFileObject(folder_name, numberOfFiles) {
  */
 const Home = createFileObject("home", 6);
 const Class2019 = createFileObject("class", 10);
-const Ivan = createFileObject("ivan", 10)
+const Ivan = createFileObject("ivan", 10);
 
+/* TODO: Implement this
+ * const Aviation = createFileObject("aviation", 0);
+ * const Landscape = createFileObject("landscape", 0);
+ * const Astrophotograhy = createFileObject("astro", 0);
+ * const Wildlife = createFileObject("wild", 0);
+ * const Nature = createFileObject("nature", 0);
+ * */
 const photos = {
   Home: Home,
   Class2019: Class2019,

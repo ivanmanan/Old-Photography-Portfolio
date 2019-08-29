@@ -23,7 +23,7 @@ class Pair {
 //       collection array. Collection is used for the menu in
 //       Portfolio.jsx and for the dropdown in Heading.jsx
 const p1 = new Pair("Class2019", "UCLA Class of 2019");
-const p2 = new Pair("Ivan", "Ivan's Modelling Career")
+const p2 = new Pair("Ivan", "Ivan's Modelling Career");
 const collection = [p1, p2];
 
 class App extends Component {
