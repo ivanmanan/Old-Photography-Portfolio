@@ -7,10 +7,10 @@ class Contact extends Component {
         <hr/>
         <div className="flex-contact">
           <div className="flex-contact-row">
-            Business coming soon!
+            Schedule a photo shoot in San Francisco!
           </div>
           <div className="flex-contact-row">
-            For now, please send a direct message to me on Instagram.
+            Contact me via direct message on Instagram.
           </div>
           <div className="flex-contact-row">
             <a href="https://www.instagram.com/ivanmphotos/" target="_blank" rel="noopener noreferrer">@ivanmphotos</a>

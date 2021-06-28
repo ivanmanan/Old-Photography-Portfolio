@@ -121,6 +121,11 @@ class Template extends Component {
     col_two = col_one + col_two;
     col_three = col_two + col_three;
 
+    console.log(keys)
+    console.log("col one:" + col_one)
+    console.log("col two:" + col_two)
+    console.log("col three:" + col_three)
+
     return (
       <div className="Template">
         <div className="flex-template">
