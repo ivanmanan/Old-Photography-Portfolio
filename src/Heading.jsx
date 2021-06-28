@@ -62,8 +62,7 @@ class Heading extends Component {
        this.props.currentOption === "Workflow" ||
        this.props.currentOption === "Portfolio") {
       return (
-        <div className="Banner"
-             id={this.props.currentOption+"-banner"}/>
+        <div style={{backgroundImage: 'url(/images/banner/' + this.props.currentOption + '.jpg)'}} className="Banner" id={this.props.currentOption+"-banner"}/>
       );
     }
   }

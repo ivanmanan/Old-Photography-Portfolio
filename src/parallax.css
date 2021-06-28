@@ -9,15 +9,3 @@
     background-repeat: no-repeat;
     background-size: cover;
 }
-
-#Home-banner {
-    background-image: url("/images/banner/Home.jpg");
-}
-
-#Workflow-banner {
-    background-image: url("/images/banner/Workflow.jpg");
-}
-
-#Portfolio-banner {
-    background-image: url("/images/banner/Portfolio.jpg");
-}
