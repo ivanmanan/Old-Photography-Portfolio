@@ -58,7 +58,7 @@ class Workflow extends Component {
     const no_sky_text = "Don't like the sky? I can fix that too! I can add a deep blue sky or the aurora borealis if you want! I can even emulate the bokeh effect using advanced mathematical techniques, such as a Gaussian blur.";
 
     const blue_sky = "/images/workflow/blue_sky.jpg";
-    const blue_sky_text = "Notice how the sky blends perfectly in with the image! This is just one power I demonstrate with Gimp. Someone photobomb your photo? I can make them vanish instantly!";
+    const blue_sky_text = "Notice how the sky blends perfectly within the image! This is just one power I demonstrate with Gimp. Someone photobomb your photo? I can make them vanish instantly!";
 
     return (
       <div className="Workflow">
