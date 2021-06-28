@@ -7,7 +7,7 @@ class Footer extends Component {
         <div className="flex-footer">
           <div className="column-buffer-footer"/>
           <div className="column-center-footer">
-            <a href="https://www.instagram.com/ivanmphotos/">
+            <a href="https://www.instagram.com/ivanmphotos/" target="_blank" rel="noopener noreferrer">
               Instagram
             </a>
           </div>

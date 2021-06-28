@@ -201,10 +201,18 @@ column-center-portfolio {
 
 .flex-contact {
     display: flex;
+    flex-direction: column;
+    justify-content: center;
     width: 100%;
     justify-content: center;
     padding-top: calc(1em + 1.5vw + 1.5vh);
     padding-bottom: calc(1em + 1vw + 1vh);
+}
+
+.flex-contact-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
 
 .flex-contact img {

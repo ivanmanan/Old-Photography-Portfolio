@@ -24,7 +24,7 @@ class Heading extends Component {
 
         <div className="options">
           <button onClick={() => this.props.handleOptions("Home")}>
-              Home
+            Samples
           </button>
         </div>
 
@@ -90,7 +90,7 @@ class Heading extends Component {
 
             <div className="navbar-header">
               <h1 className="navbar-brand" id="heading">
-                Ivan Manan
+                Ivanmphotos
               </h1>
             </div>
 
