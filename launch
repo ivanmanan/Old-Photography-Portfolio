@@ -1,4 +1,5 @@
 #!/bin/bash
 
+rm -r build
 npm run build
 surge ./build/ ivanmphotos.com

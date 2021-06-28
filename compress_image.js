@@ -14,6 +14,9 @@ const directories = getDirectories(ORIGINAL_PHOTOS_PATH);
 console.log(directories)
 
 directories.forEach(dir => {
+
+    // TODO: All images under ORIGINAL_PHOTOS_PATH needs to lowercase the jpg extension
+
     const INPUT_PATH = ORIGINAL_PHOTOS_PATH + dir + "/*.{jpg,JPG,jpeg,JPEG}";
     const OUTPUT_PATH = "public/images/" + dir + "/";
     console.log("INPUT PATH: " + INPUT_PATH)
