@@ -34,14 +34,15 @@ npm run build
 ```
 
 # Adding Photos
-1. Compress the image.
-2. ```bash
-node
-```
-
-3. Create a directory:
+1. Create a directory and name the photo after the directory name appended with the iteration number,
+   starting with the number 0.
 ```bash
-/public/images/<Photo_Shoot_Name>
+/public/images/<Photo_Shoot_Name>/original
 ```
 
-3. Update `photos.js` with the new directory `<Photo_Shoot_Name>`.
+2. Update `photos.js` with the new directory `<Photo_Shoot_Name>`.
+
+3. Compress the image.
+```bash
+node compress_image.js
+```
