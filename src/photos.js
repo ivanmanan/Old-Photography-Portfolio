@@ -43,7 +43,7 @@ function createFileObject(folder_name, numberOfFiles) {
  *       Must edit collection array in App.jsx
  *       Must edit renderSelection() function in App.jsx
  */
-const Home = createFileObject("home", 3);
+const Home = createFileObject("home", 5);
 const LongExposure = createFileObject("long_exposure", 5);
 const Landscape = createFileObject("landscape", 5);
 const Architecture = createFileObject("architecture", 3);
