@@ -1,5 +1,6 @@
 const compress_images = require("compress-images");
 const fs = require('fs');
+const rimraf = require("rimraf");
 
 function getDirectories(path) {
     return fs.readdirSync(path).filter(function (file) {
@@ -7,14 +8,14 @@ function getDirectories(path) {
     });
 }
 
-const ROOT_PATH = "public/images/";
-const directories = getDirectories(ROOT_PATH);
+const ORIGINAL_PHOTOS_PATH = "original_photos/";
+const directories = getDirectories(ORIGINAL_PHOTOS_PATH);
 
 console.log(directories)
 
 directories.forEach(dir => {
-    const INPUT_PATH = ROOT_PATH + dir + "/original/*.{jpg,JPG,jpeg,JPEG}";
-    const OUTPUT_PATH = ROOT_PATH + dir + "/";
+    const INPUT_PATH = ORIGINAL_PHOTOS_PATH + dir + "/*.{jpg,JPG,jpeg,JPEG}";
+    const OUTPUT_PATH = "public/images/" + dir + "/";
     console.log("INPUT PATH: " + INPUT_PATH)
     console.log("OUTPUT PATH: " + OUTPUT_PATH + "\n\n")
 
@@ -22,15 +23,18 @@ directories.forEach(dir => {
     removeFiles(OUTPUT_PATH).then(() => {
         compress_images_in_directory(INPUT_PATH, OUTPUT_PATH)
     });
-})
+});
 
 function removeFiles(path) {
-    let regex = /[.](jpg|JPG|jpeg|JPEG)$/
     return new Promise((resolve) => {
-        fs.readdirSync(path)
-            .filter(f => regex.test(f))
-            .map(f => fs.unlinkSync(path + f))
-        resolve()
+        rimraf(path, (err) => {
+            if(err) {
+                throw err;
+            }
+            else {
+                resolve();
+            }
+        });
     });
 }
 

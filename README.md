@@ -37,12 +37,12 @@ npm run build
 1. Create a directory and name the photo after the directory name appended with the iteration number,
    starting with the number 0.
 ```bash
-/public/images/<Photo_Shoot_Name>/original
+/original_photos/<DIR_NAME>/<DIR_NAME>0.jpg
 ```
 
-2. Update `photos.js` with the new directory `<Photo_Shoot_Name>`.
+2. Update `photos.js` with the new directory `<DIR_NAME>`.
 
-3. Compress the image.
+3. Compress the image and output into `/public/images`. The bash script should already hnadle this.
 ```bash
 node compress_image.js
 ```

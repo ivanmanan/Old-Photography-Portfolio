@@ -42,7 +42,6 @@ class Workflow extends Component {
 
   render() {
 
-    // TODO: Obtain photo of me taking a photo with a camera
     const photo_taking = "/images/workflow/photo_taking.jpg";
     const photo_taking_text = "Your shoot will be done with an imaginary Fujifilm camera. The centerpiece of Fujifilm is its vibrant color spectrum. Mirrorless cameras are state of the art technology. This is truly a great time to be alive.";
 
