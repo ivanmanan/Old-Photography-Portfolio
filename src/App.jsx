@@ -7,24 +7,10 @@ import Workflow from "./Workflow";
 import Contact from "./Contact";
 import Footer from "./Footer";
 
-import photos from "./photos";
+import {photos, collection} from "./photos";
 
 // Default option
 let optionSelected = "Home";
-
-class Pair {
-  constructor(name, title) {
-    this.name = name;
-    this.title = title;
-  }
-}
-
-// NOTE: Must create new pair for every shoot and update the
-//       collection array. Collection is used for the menu in
-//       Portfolio.jsx and for the dropdown in Heading.jsx
-const p1 = new Pair("Class2019", "UCLA Class of 2019");
-const p2 = new Pair("Ivan", "Ivan's Modelling Career");
-const collection = [p1, p2];
 
 class App extends Component {
   constructor(props) {
@@ -51,6 +37,12 @@ class App extends Component {
   }
 
   renderSelection() {
+    console.log(this.state.optionSelected)
+    console.log(photos)
+    if(this.state.optionSelected in photos) {
+      return <Template photos={photos[this.state.optionSelected]}/>;
+    }
+
     switch(this.state.optionSelected) {
       case "Portfolio":
         return <Portfolio handleOptions={this.handleOptions}
@@ -59,10 +51,6 @@ class App extends Component {
         return <Workflow/>;
       case "Contact":
         return <Contact/>;
-      case "Class2019":
-        return <Template photos={photos.Class2019}/>;
-      case "Ivan":
-        return <Template photos={photos.Ivan}/>;
       case "Home":
       default:
         return <Template photos={photos.Home}/>;

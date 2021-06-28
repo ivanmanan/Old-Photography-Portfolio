@@ -43,21 +43,34 @@ function createFileObject(folder_name, numberOfFiles) {
  *       Must edit collection array in App.jsx
  *       Must edit renderSelection() function in App.jsx
  */
-const Home = createFileObject("home", 6);
-const Class2019 = createFileObject("class", 10);
-const Ivan = createFileObject("ivan", 10);
+const Home = createFileObject("home", 3);
+const LongExposure = createFileObject("long_exposure", 5);
+const Landscape = createFileObject("landscape", 5);
+const Architecture = createFileObject("architecture", 3);
+const Beach = createFileObject("beach", 3);
+const Fitness = createFileObject("fitness", 3);
 
-/* TODO: Implement this
- * const Aviation = createFileObject("aviation", 0);
- * const Landscape = createFileObject("landscape", 0);
- * const Astrophotograhy = createFileObject("astro", 0);
- * const Wildlife = createFileObject("wild", 0);
- * const Nature = createFileObject("nature", 0);
- * */
-const photos = {
-  Home: Home,
-  Class2019: Class2019,
-  Ivan: Ivan
+class Pair {
+  constructor(name, title) {
+    this.name = name;
+    this.title = title;
+  }
 }
 
-module.exports = photos;
+const p1 = new Pair("Long Exposure", "Long Exposure");
+const p2 = new Pair("Landscape", "Landscape Photography");
+const p3 = new Pair("Architecture", "Architecture");
+const p4 = new Pair("Beach", "Beach Portraits");
+const p5 = new Pair("Fitness", "Fitness Models");
+const collection = [p1, p2, p3, p4, p5];
+
+const photos = {
+  "Home": Home,
+  "Long Exposure": LongExposure,
+  "Landscape": Landscape,
+  "Architecture": Architecture,
+  "Beach": Beach,
+  "Fitness": Fitness
+}
+
+export { photos , collection }
