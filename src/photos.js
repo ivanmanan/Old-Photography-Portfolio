@@ -38,17 +38,14 @@ function createFileObject(folder_name, numberOfFiles) {
   return photo_object;
 }
 
-/* NOTE: Declare new photo folders here
- *       File names must start 0, such as file0.jpg, file1.jpg, ...
- *       Must edit collection array in App.jsx
- *       Must edit renderSelection() function in App.jsx
- */
-const Home = createFileObject("home", 5);
+// TODO: The compress_images.js script should produce a JSON export for
+//       the file length to be imported into photos.js
+const Home = createFileObject("home", 7);
 const LongExposure = createFileObject("long_exposure", 5);
 const Landscape = createFileObject("landscape", 5);
 const Architecture = createFileObject("architecture", 3);
 const Beach = createFileObject("beach", 3);
-const Fitness = createFileObject("fitness", 3);
+const Fitness = createFileObject("fitness", 4);
 
 class Pair {
   constructor(name, title) {
